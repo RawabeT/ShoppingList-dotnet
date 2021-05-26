@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    var c = (string)ViewData["Co"];
+    var color = ViewData["colord"];
+}
+
+<h2>List of Products:</h2>
+@color
+
+<table class="table">
+    <thead>
+        <tr class="btn-primary">
+            <th scope="col">ID</th>
+            <th scope="col">Product Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Image</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr class="table-@color">
+                <td scope="row" style="background-color:">@product.ID</td>
+                <td scope="row">@product.Name</td>
+                <td scope="row">@product.Price</td>
+                <td scope="row"><img src="@product.Image" height="200" width="200" /></td>
+                <td scope="row"><button class="btn btn-outline-dark"><a href="Products/Details/@product.ID">Show</a></button></td>
+            </tr>
+        }
+    </tbody>
+</table>
+

@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewData["Title"] = "Details";
+    var product = (ProductModel)ViewData["Products"];
+}
+
+<div class="container" style="padding:20px;">
+    <h1>Details: </h1>
+    <h4>Product ID: @product.ID</h4>
+    <h4>Product Name: @product.Name</h4>
+    <h4>Product Price: @product.Price SR</h4>
+    <h4>
+        <img src="@product.Image" />
+    </h4>
+</div>
